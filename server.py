@@ -1,4 +1,6 @@
+from flask import Flask
 
+import subprocess
 
 
 DATABASE = 'some_database.db'
@@ -9,6 +11,9 @@ SECRET_KEY = 'development key'
 app = Flask(__name__)
 app.config.from_object(__name__)
 
+
+
+subprocess.Popen(['python','seeder.py'])
 
 
 
