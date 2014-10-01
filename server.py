@@ -10,7 +10,7 @@ import subprocess
 
 #config values
 SQLALCHEMY_DATABASE_URI ='sqlite:///some_database.db'
-DEBUG = True
+DEBUG = False
 SECRET_KEY = 'development key'
 
 #create app
@@ -43,7 +43,7 @@ class Person(db.Model, BaseSQLModel):
     url             = db.Column(db.String)
     age             = db.Column(db.Integer)
     hobbies         = db.relationship('Hobby', secondary=persons_hobbies,
-        backref=db.backref('person', lazy='dynamic'))
+        backref=db.backref('persons', lazy='dynamic'))
 
 
 #Person Declarative DB object with mulitple inheritance
@@ -62,5 +62,5 @@ api_manager.create_api(Hobby,  methods=crud)
 if __name__ == '__main__':
     db.drop_all()
     db.create_all()
-    #subprocess.Popen(['python','seeder.py'])
+    subprocess.Popen(['python','seeder.py'])
     app.run()
