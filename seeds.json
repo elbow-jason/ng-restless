@@ -1,0 +1,28 @@
+
+{
+"person":[
+          {"id": 1, "name":"Ricardo Carlino",       "profession":"Computer Programmer", "project": "FarmBot",      "url":"http://go.farmbot.it/" },
+          {"id": 2, "name":"Jason Goldberger",      "profession":"Lesser Code Monkey",  "project": "VGCLIA",       "url":"www.github.com"        },
+          {"id": 3, "name":"Chris Matthews",        "profession":"IoT God",             "project": "Octoblu",      "url":"www.octoblu.com/"      },
+          {"id": 4, "name":"Wildman Gorillaskin",   "profession":"Cat",                 "project": "Destruction",  "url":"www.cat.cat/"          }
+      ],
+
+"persons_hobbies":[
+          {"person_id": 1, "hobby_id": 1},
+          {"person_id": 1, "hobby_id": 2},
+          {"person_id": 2, "hobby_id": 1},
+          {"person_id": 2, "hobby_id": 2},
+          {"person_id": 2, "hobby_id": 3},
+          {"person_id": 3, "hobby_id": 1},
+          {"person_id": 3, "hobby_id": 3},
+          {"person_id": 4, "hobby_id": 4}
+      ],
+
+"hobby":[
+          {"id": 1, "name":"OpenSource",   "description":"Creation of software for which the original source code is made freely available and may be redistributed and modified." },
+          {"id": 2, "name":"crochet",      "description":"A handicraft in which yarn is made up into a patterned fabric by looping yarn with a hooked needle."                     },
+          {"id": 3, "name":"robotics",     "description":"The branch of technology that deals with the design, construction, operation, and application of robots."                },
+          {"id": 4, "name":"sleep",        "description":"Sleep..."                                                                                                                }
+
+      ]
+}
