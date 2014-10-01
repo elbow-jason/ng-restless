@@ -63,5 +63,8 @@ def get_and_post(hobby_id, person_id):
 
 if __name__ == '__main__':
     time.sleep(1)
-    seeder()
-    hobby_to_person()
+    try:
+        seeder()
+        hobby_to_person()
+    except:
+        pass

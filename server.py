@@ -1,5 +1,5 @@
 #import flask
-from flask import Flask
+from flask import Flask, make_response
 
 #import flask extensions
 from flask.ext.sqlalchemy import SQLAlchemy
@@ -10,7 +10,7 @@ import subprocess
 
 #config values
 SQLALCHEMY_DATABASE_URI ='sqlite:///some_database.db'
-DEBUG = False
+DEBUG = True
 SECRET_KEY = 'development key'
 
 #create app
@@ -52,6 +52,9 @@ class Hobby(db.Model, BaseSQLModel):
     description     = db.Column(db.String)
 
 
+@app.route('/')
+def index():
+    return make_response(open("index.html").read())
 
 # Create API endpoints, which will be available at /api/<tablename> by default.
 # Allowed HTTP methods can be specified as well.
