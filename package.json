@@ -3,7 +3,7 @@
   "version": "0.0.1a",
   "description": "An abstraction for generating queries for a Flask-Restless restful api made in AngularJS.",
   "scripts": {
-    "test": "grunt test"
+    "tests": "grunt tests"
   },
   "repository": {
     "type": "git",
