@@ -2,10 +2,10 @@
 {
     "person":
         [
-            {"id": 1, "name":"Ricardo Carlino",       "profession":"Computer Programmer", "project": "FarmBot",      "url":"http://go.farmbot.it/" },
-            {"id": 2, "name":"Jason Goldberger",      "profession":"Lesser Code Monkey",  "project": "VGCLIA",       "url":"www.github.com"        },
-            {"id": 3, "name":"Chris Matthews",        "profession":"IoT God",             "project": "Octoblu",      "url":"www.octoblu.com/"      },
-            {"id": 4, "name":"Wildman Gorillaskin",   "profession":"Cat",                 "project": "Destruction",  "url":"www.cat.cat/"          }
+            {"id": 1, "name":"Ricardo Carlino",       "profession":"Computer Programmer", "project": "FarmBot",      "url":"http://go.farmbot.it/"   },
+            {"id": 2, "name":"Jason Goldberger",      "profession":"Lesser Code Monkey",  "project": "VGCLIA",       "url":"www.github.com/jlgoldb2" },
+            {"id": 3, "name":"Chris Matthews",        "profession":"IoT God",             "project": "Octoblu",      "url":"www.octoblu.com/"        },
+            {"id": 4, "name":"Wildman Gorillaskin",   "profession":"Cat",                 "project": "Destruction",  "url":"www.cat.cat/"            }
         ],
     
     "hobby":

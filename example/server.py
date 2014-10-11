@@ -84,7 +84,8 @@ def init_crud_restless_api():
     # by default.
     # Allowed HTTP methods can be specified as well.
     crud = ['POST', 'GET', 'PUT', 'DELETE' ]
-    api_manager.create_api(Person, methods=crud ,
+    api_manager.create_api(Person, methods=crud)
+    """,
                            include_columns=['id',
                                              'profession',
                                              'name',
@@ -95,7 +96,7 @@ def init_crud_restless_api():
                                              'persons_hobbies.hobby_id',
                                              'persons_hobbies.person_id'
                                              ])
-
+    """
     logger.info('Person API created')
     api_manager.create_api(Hobby,  methods=crud)
     logger.info('Hobby API created')
