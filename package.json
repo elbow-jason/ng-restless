@@ -1,0 +1,25 @@
+{
+  "name": "ng-restless",
+  "version": "0.0.1a",
+  "description": "An AngularJS abstraction for generating queries for a Flask-Restless restful api.",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jlgoldb2/ng-restless"
+  },
+  "keywords": [
+    "flask",
+    "Flask-Restless",
+    "restful api",
+    "AngularJS",
+    "angular",
+    "angular.js"
+  ],
+  "author": "Jason Goldberger",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "devDependencies": {
+  }
+}
