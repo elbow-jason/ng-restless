@@ -3,31 +3,41 @@ from flask import Flask, make_response
 
 #import flask extensions
 from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.restless   import APIManager
+from flask.ext.restless import APIManager
 
 #standard lib
 import subprocess
 
+#logger
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 #config values
-SQLALCHEMY_DATABASE_URI ='sqlite:///some_database.db'
+SQLALCHEMY_DATABASE_URI ='sqlite:///peepel.db'
 DEBUG = True
 SECRET_KEY = 'development key'
+
 
 #create app
 app = Flask(__name__)
 
+
 #config app
 app.config.from_object(__name__)
+
 
 #init extensitions
 db = SQLAlchemy(app)
 api_manager = APIManager(app, flask_sqlalchemy_db=db)
+
 
 #many-to-many persons_to_hobbies
 persons_hobbies = db.Table('persons_hobbies',
     db.Column('person_id', db.Integer, db.ForeignKey('person.id')),
     db.Column('hobby_id',  db.Integer, db.ForeignKey('hobby.id'))
     )
+
 
 #base object class
 class BaseSQLModel(object):
@@ -56,14 +66,42 @@ class Hobby(db.Model, BaseSQLModel):
 def index():
     return make_response(open("index.html").read())
 
-# Create API endpoints, which will be available at /api/<tablename> by default.
-# Allowed HTTP methods can be specified as well.
-crud = ['POST', 'GET', 'PUT', 'DELETE' ]
-api_manager.create_api(Person, methods=crud)
-api_manager.create_api(Hobby,  methods=crud)
+
+def create_tables():
+    with app.app_context():
+        try:
+            db.drop_all()
+            logger.info('DB was dropped')
+        except:
+            logger.info('DB was not dropped')
+            pass
+        db.create_all()
+        logger.info('DB was created')
+
+
+def init_crud_restless_api():
+    # Create API endpoints, which will be available at /api/<tablename>
+    # by default.
+    # Allowed HTTP methods can be specified as well.
+    crud = ['POST', 'GET', 'PUT', 'DELETE' ]
+    api_manager.create_api(Person, methods=crud ,
+                           include_columns=['id',
+                                             'profession',
+                                             'name',
+                                             'project',
+                                             'url',
+                                             'age',
+                                             'hobbies',
+                                             'persons_hobbies.hobby_id',
+                                             'persons_hobbies.person_id'
+                                             ])
+
+    logger.info('Person API created')
+    api_manager.create_api(Hobby,  methods=crud)
+    logger.info('Hobby API created')
 
 if __name__ == '__main__':
-    db.drop_all()
-    db.create_all()
-    subprocess.Popen(['python','seeder.py'])
+    create_tables()
+    init_crud_restless_api()
+    subprocess.Popen(['python','seeder.py'], stdout=subprocess.PIPE)
     app.run()
