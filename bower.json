@@ -1,0 +1,23 @@
+{
+  "name": "ng-restless",
+  "version": "2.5.1",
+  "ignore": [
+    "**/.*",
+    "tests",
+    "example",
+    "build",
+    "*.md",
+    "karma.conf.js",
+    "LICENSE",
+    "Gruntfile.js",
+    "package.json",
+    "bower.json"
+  ],
+  "main": "./dist/ng-restless.js",
+  "dependencies": {
+    "angular": "~1"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1"
+  }
+}
