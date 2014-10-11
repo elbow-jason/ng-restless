@@ -26,3 +26,27 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+develop-eggs/
+eggs/
+unused/
+node_modules/
+uploads/
+
+# startup_clia.sh
+# reset_db.sh
+# delay_seed.sh
+
+
+*.egg-info/
+.installed.cfg
+*.egg
+
+migrations/
